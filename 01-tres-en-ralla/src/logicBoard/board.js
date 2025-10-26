@@ -13,6 +13,9 @@ export const updateBoard = (index, board, setBoard, turn, setTurn, winner, setWi
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
 
+    window.localStorage.setItem('board', JSON.stringify(newBoard))
+    window.localStorage.setItem('turn', JSON.stringify(turn))
+
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
       confetti()
