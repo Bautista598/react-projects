@@ -50,7 +50,10 @@ function Game() {
 				<Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
 			</section>
 
-			<WinnerModal winner={winner} resetGame={resetGame} />
+			<WinnerModal
+				winner={winner}
+				resetGame={() => resetGame(setBoard, setTurn, setWinner)}
+			/>
 		</main>
 	)
 }
