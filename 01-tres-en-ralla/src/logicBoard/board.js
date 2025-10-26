@@ -1,3 +1,5 @@
+import confetti from 'canvas-confetti'
+
 import { TURNS } from "../constants"
 import { checkWinner, checkEndGame } from "./game"
 
@@ -13,6 +15,7 @@ export const updateBoard = (index, board, setBoard, turn, setTurn, winner, setWi
 
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
+      confetti()
       setWinner(newWinner)
     } else if (checkEndGame(newBoard)) {
       setWinner(false)
