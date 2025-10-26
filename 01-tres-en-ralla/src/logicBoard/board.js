@@ -6,7 +6,6 @@ export const updateBoard = (index, board, setBoard, turn, setTurn, winner, setWi
 
     const newBoard = [...board]
     newBoard[index] = turn
-    console.log(newBoard)
     setBoard(newBoard)
 
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
